@@ -14,7 +14,7 @@ export default function Portfolio() {
         aria-label="About Jordan"
         style={{ backgroundColor: '#0A0A0A', color: '#ffffff' }}
       >
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden hidden md:block">
           <div className="relative h-full w-1/2 ml-auto opacity-30">
             <GenerativeArtScene />
           </div>
