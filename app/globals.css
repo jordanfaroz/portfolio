@@ -118,6 +118,32 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.ascii-stars-bg {
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(1px 1px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 60%, white, transparent),
+    radial-gradient(1px 1px at 70% 40%, white, transparent);
+  background-size: 200% 200%;
+  opacity: 0.25;
+}
+
+[data-us-project] canvas {
+  clip-path: inset(0 0 8% 0);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-long {
+  animation: fadeInUp 1.4s ease forwards;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
