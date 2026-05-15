@@ -27,18 +27,18 @@ void main(){
   vec4  o  = vec4(0.0);
 
   float s = 0.0;
-  for (float i=0.0, z=0.0, d=0.0; i++<8e1;
+  for (float i=0.0, z=0.0, d=0.0; i++<3.5e1;
        o += (cos(s + vec4(0.0,1.0,8.0,0.0))+1.0)/d)
   {
     vec3 p = z * normalize(FC.rgb*2.0 - r.xyy);
     vec3 a = normalize(cos(vec3(5.0,0.0,1.0) + t - d*4.0));
     p.z += 5.0;
     a = a*dot(a,p) - cross(a,p);
-    for (d=1.0; d++<9.0;)
+    for (d=1.0; d++<5.0;)
       a -= sin(a*d+t).zxy/d;
     z += d = 0.1*abs(length(p)-3.0) + 0.07*abs(cos(s=a.y));
   }
-  o = tanh(o/5e3);
+  o = tanh(o/1e3);
   fragColor = vec4(o.rgb, 1.0);
 }`;
 
@@ -104,7 +104,7 @@ export default function PhosphorBackground() {
     const uMouse = gl.getUniformLocation(program, 'iMouse');
 
     const resize = () => {
-      const dpr = Math.max(1, Math.min(1.5, window.devicePixelRatio || 1));
+      const dpr = 1;
       canvas.width  = Math.floor(canvas.offsetWidth  * dpr);
       canvas.height = Math.floor(canvas.offsetHeight * dpr);
       gl.viewport(0, 0, canvas.width, canvas.height);
@@ -122,7 +122,7 @@ export default function PhosphorBackground() {
       frameRef.current += 1;
 
       gl.useProgram(program);
-      const dpr = Math.max(1, Math.min(1.5, window.devicePixelRatio || 1));
+      const dpr = 1;
       gl.uniform3f(uRes, canvas.width, canvas.height, dpr);
       gl.uniform1f(uTime, t);
       gl.uniform1i(uFrame, frameRef.current);
