@@ -4,6 +4,7 @@ import ShaderBackground from '@/components/ui/shader-background';
 import ShaderHeroBackground from '@/components/ui/animated-shader-hero';
 import ATCShaderBackground from '@/components/ui/atc-shader';
 import PhosphorBackground from '@/components/ui/phosphor-30';
+import { SvgPathDrawingTextAnimation } from '@/components/ui/path-drawing-portfolio-hero';
 
 export default function Portfolio() {
   return (
@@ -19,40 +20,53 @@ export default function Portfolio() {
             <GenerativeArtScene />
           </div>
         </div>
-        <p className="text-sm font-bold uppercase tracking-[0.2em] opacity-90">
-          01 — Jordan Ambrose Faroz
-        </p>
+        <div className="relative z-[2] flex flex-1 flex-col justify-between gap-6">
+          <div>
+            <SvgPathDrawingTextAnimation
+              text="01 — JORDAN AMBROSE FAROZ"
+              className="min-h-0 w-full max-w-[48rem] shrink-0 self-start"
+              fromColor="#7C6FFF"
+              toColor="#C4B5FD"
+              fontSize={64}
+              viewBoxWidth={1200}
+              viewBoxHeight={80}
+              strokeWidth={2}
+              durationSec={5.5}
+              loop
+            />
 
-        <hr className="my-[2vw] border-t border-white/10" />
+            <hr className="my-[2vw] border-t border-white/10" />
 
-        <div>
-          <h1 className="text-[clamp(3.5rem,11vw,13rem)] font-extrabold leading-[0.85] uppercase tracking-tight">
-            Build
-            <br />
-            Systems
-            <br />
-            That
-            <br />
-            <span className="text-[#7C6FFF]">Think.</span>
-          </h1>
-        </div>
+            <h1 className="text-[clamp(3.5rem,11vw,13rem)] font-extrabold leading-[0.85] uppercase tracking-tight">
+              Build
+              <br />
+              Systems
+              <br />
+              That
+              <br />
+              <span className="text-[#7C6FFF]">Think.</span>
+            </h1>
+          </div>
 
-        <hr className="my-[2vw] border-t border-white/10" />
+          <div>
+            <hr className="my-[2vw] border-t border-white/10" />
 
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <p className="max-w-[52ch] text-[clamp(1rem,2.2vw,1.75rem)] font-normal leading-relaxed opacity-80">
-            Software Engineer specialising in LLM evaluation, prompt engineering, and
-            production-ready AI integrations — turning research into reliable systems.
-          </p>
-          <div className="flex flex-col gap-2 text-right text-sm opacity-50">
-            <span>Mumbai, India</span>
-            <span>+91 09881230156</span>
-            <a
-              href="mailto:jordanfaroz.jf@gmail.com"
-              className="underline underline-offset-4 transition-opacity hover:opacity-100"
-            >
-              jordanfaroz.jf@gmail.com
-            </a>
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <p className="max-w-[52ch] text-[clamp(1rem,2.2vw,1.75rem)] font-normal leading-relaxed opacity-80">
+                Software Engineer specialising in LLM evaluation, prompt engineering, and
+                production-ready AI integrations — turning research into reliable systems.
+              </p>
+              <div className="flex flex-col gap-2 text-right text-sm opacity-50">
+                <span>Mumbai, India</span>
+                <span>+91 09881230156</span>
+                <a
+                  href="mailto:jordanfaroz.jf@gmail.com"
+                  className="underline underline-offset-4 transition-opacity hover:opacity-100"
+                >
+                  jordanfaroz.jf@gmail.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </FlowSection>
